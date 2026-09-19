@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+﻿# 实验07 · 软件安全检测与漏洞管理平台 —— Windows 辅助脚本（PowerShell 5.1）
 # 启动本地被测靶场：未修复版（端口 8000）与修复版（端口 8001）。
 # 两个版本业务代码相同，仅安全响应头不同，用于演示“修复—复扫”闭环。
 $root = Split-Path -Parent $MyInvocation.MyCommand.Definition
