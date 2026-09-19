@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+﻿# 实验07 · 软件安全检测与漏洞管理平台 —— Windows 辅助脚本（PowerShell 5.1）
 # 安装依赖脚本。
 # 说明：本实验严禁安装 streamlit/pandas 之外的重包。这里只装 pytest。
 # 网络慢，必须使用阿里云镜像。要跑界面请自行 pip install streamlit。
