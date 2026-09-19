@@ -1,0 +1,41 @@
+MIT License
+
+Copyright (c) 2026 王锐兵 (软件2304, 学号 23110506126)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## 安全工具的额外声明
+
+本仓库包含**安全检测**相关代码，使用前请务必注意：
+
+1. **本仓库不是攻击工具。** 它的定位是"把扫描结果转为可追踪的风险"，
+   不包含任何漏洞利用代码，也不包含主动扫描逻辑。
+
+2. **只允许对自己拥有或已获得书面授权的目标使用。**
+   `scope.md` 是授权记录，`platform/fanwei-peizhi.json` 是强制白名单。
+   平台在生成任何扫描命令之前都会先过白名单校验。
+
+3. **禁止用于任何未授权的系统。** 未经授权扫描他人系统在
+   多数司法管辖区属于违法行为。
+
+4. 本仓库是课程实验的二次开发成品，**不是** OWASP ZAP、
+   DefectDojo 或任何上游项目的再分发。上游版权归各自作者所有，
+   来源与许可证逐项列在 [NOTICE.md](NOTICE.md)。

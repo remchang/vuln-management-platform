@@ -1,0 +1,30 @@
+# 平台依赖
+
+# ---- 核心：平台本身只用 Python 标准库 ----
+#   sqlite3     库存/漏洞库（标准库）
+#   json        ZAP 报告解析（标准库）
+#   hashlib     稳定指纹与报告哈希（标准库）
+#   html.parser HTML 净化（标准库）
+#   http.server 被测目标应用（标准库）
+#
+# 也就是说：**不装任何第三方包，平台核心和全部测试都能跑。**
+# 这是刻意的设计——安全工具依赖越少，可审计性越好。
+
+# ---- 仅测试用 ----
+pytest==9.1.1
+colorama==0.4.6
+iniconfig==2.3.0
+packaging==26.3
+pluggy==1.6.0
+Pygments==2.21.0
+
+# ---- 可选：界面 ----
+# 本机未安装（下载依赖较大），所以界面未实跑。
+# 要跑 app.py 需要自己装：
+#   .\.venv\Scripts\python -m pip install streamlit -i https://mirrors.aliyun.com/pypi/simple/
+streamlit==1.64.0
+
+# ---- 未安装：检测工具 ----
+# OWASP ZAP 2.17.0 是独立程序，不是 pip 包。
+# 本机既没有 Docker 也没有 ZAP，**没有执行过任何真实扫描**。
+# 下载与启动命令见 README 第六节与 scripts/saomiao.ps1。

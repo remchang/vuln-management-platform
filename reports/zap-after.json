@@ -1,0 +1,120 @@
+{
+  "@version": "2.11.1",
+  "@generated": "2026-09-19T15:00:00Z",
+  "site": [
+    {
+      "@name": "http://localhost:8000",
+      "@host": "localhost",
+      "@port": "8000",
+      "@ssl": "false",
+      "alerts": [
+        {
+          "pluginid": "10035",
+          "riskcode": "2",
+          "riskdesc": "Medium",
+          "name": "Strict-Transport-Security Header Not Set",
+          "desc": "<p>缺少 HSTS 头，存在降级攻击风险。</p>",
+          "instances": [
+            {"uri": "http://localhost:8000/", "method": "GET", "param": "", "evidence": ""}
+          ],
+          "count": "1",
+          "solution": "<p>启用 HTTPS 并设置 HSTS 头。</p>",
+          "cweid": "319",
+          "wascid": "0",
+          "sourceid": "3"
+        },
+        {
+          "pluginid": "10019",
+          "riskcode": "1",
+          "riskdesc": "Low",
+          "name": "Content-Type Header Missing",
+          "desc": "<p>部分响应缺少 Content-Type 头。</p>",
+          "instances": [
+            {"uri": "http://localhost:8000/api", "method": "GET", "param": "", "evidence": ""}
+          ],
+          "count": "1",
+          "solution": "<p>为每个响应设置正确的 Content-Type。</p>",
+          "cweid": "16",
+          "wascid": "0",
+          "sourceid": "3"
+        },
+        {
+          "pluginid": "10109",
+          "riskcode": "0",
+          "riskdesc": "Informational",
+          "name": "Modern jQuery",
+          "desc": "<p>页面使用了较新的 jQuery 版本。</p>",
+          "instances": [
+            {"uri": "http://localhost:8000/", "method": "GET", "param": "", "evidence": "jquery-3.6.0.min.js"}
+          ],
+          "count": "1",
+          "solution": "",
+          "cweid": "0",
+          "wascid": "0",
+          "sourceid": "3"
+        },
+        {
+          "pluginid": "10010",
+          "riskcode": "1",
+          "riskdesc": "Low",
+          "name": "Disclosure of Sensitive Information in URL",
+          "desc": "<p>URL 中可能包含敏感信息。</p>",
+          "instances": [
+            {"uri": "http://localhost:8000/", "method": "GET", "param": "token", "evidence": "token=abc123"}
+          ],
+          "count": "1",
+          "solution": "<p>不要把敏感信息放在 URL 里。</p>",
+          "cweid": "0",
+          "wascid": "0",
+          "sourceid": "3"
+        },
+        {
+          "pluginid": "10024",
+          "riskcode": "2",
+          "riskdesc": "Medium",
+          "name": "Information Disclosure - Sensitive Information in Meta Tags",
+          "desc": "<p>Meta 标签中可能泄露了敏感信息。</p>",
+          "instances": [
+            {"uri": "http://localhost:8000/", "method": "GET", "param": "", "evidence": "<meta name=\"generator\" content=\"x\">"}
+          ],
+          "count": "1",
+          "solution": "<p>清理不必要的 meta 信息。</p>",
+          "cweid": "0",
+          "wascid": "0",
+          "sourceid": "3"
+        },
+        {
+          "pluginid": "10049",
+          "riskcode": "1",
+          "riskdesc": "Low",
+          "name": "Incomplete or No Cache-Control Header Set",
+          "desc": "<p>响应缺少 Cache-Control 头，敏感内容可能被缓存。</p>",
+          "instances": [
+            {"uri": "http://localhost:8000/", "method": "GET", "param": "", "evidence": ""}
+          ],
+          "count": "1",
+          "solution": "<p>为敏感响应设置 <code>Cache-Control: no-store</code>。</p>",
+          "cweid": "0",
+          "wascid": "0",
+          "sourceid": "3"
+        },
+        {
+          "pluginid": "10099",
+          "riskcode": "0",
+          "riskdesc": "Informational",
+          "name": "Information Disclosure - Debug Details in Response",
+          "desc": "<p>响应可能包含调试信息（本夹具同时用于保持扫描 URL 覆盖率一致）。</p>",
+          "instances": [
+            {"uri": "http://localhost:8000/search", "method": "GET", "param": "", "evidence": ""},
+            {"uri": "http://localhost:8000/about", "method": "GET", "param": "", "evidence": ""}
+          ],
+          "count": "2",
+          "solution": "",
+          "cweid": "0",
+          "wascid": "0",
+          "sourceid": "3"
+        }
+      ]
+    }
+  ]
+}

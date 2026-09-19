@@ -1,0 +1,152 @@
+{
+  "@version": "2.11.1",
+  "@generated": "2026-09-19T10:00:00Z",
+  "site": [
+    {
+      "@name": "http://localhost:8000",
+      "@host": "localhost",
+      "@port": "8000",
+      "@ssl": "false",
+      "alerts": [
+        {
+          "pluginid": "10020",
+          "riskcode": "1",
+          "riskdesc": "Low (Medium)",
+          "name": "X-Frame-Options Header Not Set",
+          "desc": "<p>X-Frame-Options 响应头没有设置，页面可能被嵌入到恶意站点的 iframe 中，造成点击劫持。</p><p>建议设置 <code>DENY</code> 或 <code>SAMEORIGIN</code>。</p>",
+          "instances": [
+            {"uri": "http://localhost:8000/", "method": "GET", "param": "", "evidence": ""},
+            {"uri": "http://localhost:8000/search", "method": "GET", "param": "q", "evidence": ""}
+          ],
+          "count": "2",
+          "solution": "<p>给所有响应加上 <code>X-Frame-Options: DENY</code> 头。</p>",
+          "cweid": "16",
+          "wascid": "15",
+          "sourceid": "3"
+        },
+        {
+          "pluginid": "10021",
+          "riskcode": "1",
+          "riskdesc": "Low (Medium)",
+          "name": "X-Content-Type-Options Header Missing",
+          "desc": "<p>缺少 X-Content-Type-Options 头，浏览器可能进行 MIME 嗅探，带来安全问题。</p>",
+          "instances": [
+            {"uri": "http://localhost:8000/", "method": "GET", "param": "", "evidence": ""},
+            {"uri": "http://localhost:8000/about", "method": "GET", "param": "", "evidence": ""}
+          ],
+          "count": "2",
+          "solution": "<p>设置 <code>X-Content-Type-Options: nosniff</code>。</p>",
+          "cweid": "16",
+          "wascid": "15",
+          "sourceid": "3"
+        },
+        {
+          "pluginid": "10038",
+          "riskcode": "2",
+          "riskdesc": "Medium",
+          "name": "Content Security Policy (CSP) Header Not Set",
+          "desc": "<p>没有设置 Content-Security-Policy，难以防御 XSS 等注入攻击。</p>",
+          "instances": [
+            {"uri": "http://localhost:8000/", "method": "GET", "param": "", "evidence": ""}
+          ],
+          "count": "1",
+          "solution": "<p>设置合适的 CSP 头，例如 <code>default-src 'self'</code>。</p>",
+          "cweid": "693",
+          "wascid": "15",
+          "sourceid": "3"
+        },
+        {
+          "pluginid": "10035",
+          "riskcode": "2",
+          "riskdesc": "Medium",
+          "name": "Strict-Transport-Security Header Not Set",
+          "desc": "<p>缺少 HSTS 头，存在降级攻击风险。</p>",
+          "instances": [
+            {"uri": "http://localhost:8000/", "method": "GET", "param": "", "evidence": ""}
+          ],
+          "count": "1",
+          "solution": "<p>启用 HTTPS 并设置 HSTS 头。</p>",
+          "cweid": "319",
+          "wascid": "0",
+          "sourceid": "3"
+        },
+        {
+          "pluginid": "10019",
+          "riskcode": "1",
+          "riskdesc": "Low",
+          "name": "Content-Type Header Missing",
+          "desc": "<p>部分响应缺少 Content-Type 头。</p>",
+          "instances": [
+            {"uri": "http://localhost:8000/api", "method": "GET", "param": "", "evidence": ""}
+          ],
+          "count": "1",
+          "solution": "<p>为每个响应设置正确的 Content-Type。</p>",
+          "cweid": "16",
+          "wascid": "0",
+          "sourceid": "3"
+        },
+        {
+          "pluginid": "10109",
+          "riskcode": "0",
+          "riskdesc": "Informational",
+          "name": "Modern jQuery",
+          "desc": "<p>页面使用了较新的 jQuery 版本。</p>",
+          "instances": [
+            {"uri": "http://localhost:8000/", "method": "GET", "param": "", "evidence": "jquery-3.6.0.min.js"}
+          ],
+          "count": "1",
+          "solution": "",
+          "cweid": "0",
+          "wascid": "0",
+          "sourceid": "3"
+        },
+        {
+          "pluginid": "10010",
+          "riskcode": "1",
+          "riskdesc": "Low",
+          "name": "Disclosure of Sensitive Information in URL",
+          "desc": "<p>URL 中可能包含敏感信息。</p>",
+          "instances": [
+            {"uri": "http://localhost:8000/", "method": "GET", "param": "token", "evidence": "token=abc123"}
+          ],
+          "count": "1",
+          "solution": "<p>不要把敏感信息放在 URL 里。</p>",
+          "cweid": "0",
+          "wascid": "0",
+          "sourceid": "3"
+        },
+        {
+          "pluginid": "10024",
+          "riskcode": "1",
+          "riskdesc": "Low",
+          "name": "Information Disclosure - Sensitive Information in Meta Tags",
+          "desc": "<p>Meta 标签中可能泄露了敏感信息。</p>",
+          "instances": [
+            {"uri": "http://localhost:8000/", "method": "GET", "param": "", "evidence": "<meta name=\"generator\" content=\"x\">"}
+          ],
+          "count": "1",
+          "solution": "<p>清理不必要的 meta 信息。</p>",
+          "cweid": "0",
+          "wascid": "0",
+          "sourceid": "3"
+        },
+        {
+          "pluginid": "10099",
+          "riskcode": "0",
+          "riskdesc": "Informational",
+          "name": "Information Disclosure - Debug Details in Response",
+          "desc": "<p>响应可能包含调试信息（本夹具同时用于保持扫描 URL 覆盖率一致）。</p>",
+          "instances": [
+            {"uri": "http://localhost:8000/search", "method": "GET", "param": "", "evidence": ""},
+            {"uri": "http://localhost:8000/about", "method": "GET", "param": "", "evidence": ""}
+          ],
+          "count": "2",
+          "solution": "",
+          "cweid": "0",
+          "wascid": "0",
+          "sourceid": "3"
+        }
+      ]
+    }
+  ]
+}

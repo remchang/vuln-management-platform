@@ -1,0 +1,39 @@
+# ---- Python ----
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+pip*.txt
+
+# ---- 平台运行数据 ----
+# 漏洞库、导入的原始报告副本、脱敏中间产物都是运行态，不入库。
+# 重建方式：scripts/daoru-baogao.ps1 重新导入 reports/ 下的夹具。
+data/
+*.db
+*.db-wal
+*.db-shm
+
+# ---- ZAP 相关（体积大、可重新下载）----
+ZAP_2.17.0/
+jre/
+zap-*.jar
+zap*.log
+
+# ---- 报告产物 ----
+# reports/ 下的夹具 JSON 要入库（是交付物），
+# 但扫描产物（before/after 的 HTML、原始导出）不入库。
+reports/*.html
+reports/*-raw.json
+reports/daochu/
+
+# ---- 凭据 ----
+.env
+*.pem
+*.key
+*.token
+
+# ---- 临时 / 调试 ----
+*.log
+_diag*.py
+_probe.py

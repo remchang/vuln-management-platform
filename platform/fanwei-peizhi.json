@@ -1,0 +1,22 @@
+{
+  "beizhu": "本配置文件为《开源软件与新技术》实验07的授权白名单。只有列在下面的目标才允许扫描。RFC1918 私网地址（如 192.168.x.x、10.x.x.x）不会自动视为已授权，必须显式写进 allowed_ips 才会放行。本机没有 ZAP，本文件只用于门禁校验演示，不表示做过真实扫描。",
+  "allowed_hosts": [
+    "localhost",
+    "127.0.0.1",
+    "host.docker.internal",
+    "mubiao"
+  ],
+  "allowed_ips": [
+    "127.0.0.1"
+  ],
+  "allowed_urls": [
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
+    "http://host.docker.internal:8000"
+  ],
+  "forbidden_keywords": [
+    "example.com",
+    "evil.com",
+    "attacker"
+  ]
+}
